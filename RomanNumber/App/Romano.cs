@@ -19,12 +19,14 @@ namespace App
 
         public int ToDecimal(string numeroRomano)
         {
-            var algarismos = new List<string>(numeroRomano.Split(""));
+            var algarismos = numeroRomano.ToCharArray();
             int retorno = 0;
 
             foreach(var al in algarismos)
             {
-                retorno +=_numerosRomanos[al];
+                if(al.ToString() > algarismos.)
+
+                retorno +=_numerosRomanos[al.ToString()];
             }
 
             return retorno;
