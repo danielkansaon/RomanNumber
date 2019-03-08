@@ -11,7 +11,40 @@ namespace App.Test
             // converter xx para numero decimal
             int numeroEsperado = 20;
             string numeroRomano = "XX";
-            int res = App.Romano.ToDecimal("XX");
+            var romano = new App.Romano();
+            int res = romano.ToDecimal(numeroRomano);
+            Assert.AreEqual(numeroEsperado, res);
+        }
+
+        [TestMethod]
+        public void DecimalParaRomano()
+        {
+            // converter xx para numero decimal
+            int numeroDecimal  = 20;
+            string numeroEsperado = "XX";
+            var appDecimal = new App.AppDecimal();
+            int res = appDecimal.ToRomano(numeroDecimal);
+            Assert.AreEqual(numeroEsperado, res);
+        }
+        [TestMethod]
+        public void RomanoParaDecimal2()
+        {
+            // converter xx para numero decimal
+            int numeroEsperado = 86;
+            string numeroRomano = "LXXXVI";
+            var romano = new App.Romano();
+            int res = romano.ToDecimal(numeroRomano);
+            Assert.AreEqual(numeroEsperado, res);
+        }
+
+        [TestMethod]
+        public void DecimalParaRomano2()
+        {
+            // converter xx para numero decimal
+            int numeroDecimal = 1834;
+            string numeroEsperado = "MDCCCXXXIV";
+            var appDecimal = new App.AppDecimal();
+            int res = appDecimal.ToRomano(numeroDecimal);
             Assert.AreEqual(numeroEsperado, res);
         }
     }
